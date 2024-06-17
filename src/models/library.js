@@ -7,8 +7,16 @@ export default class Library {
     this._books.push(book);
   }
 
+  addAll(books)
+  {
+    if(Array.isArray(books) && books.length> 0)
+      {
+        this._books = [...this._books, ...books];
+      }
+  }
+
   removeBook(isbn) {
-    this._books = this._books.filter(book => book.isbn !== isbn);
+    this._books = this._books.filter(book => book.getIsbn() !== isbn);
     console.log(`The book with the isbn: ${isbn} has been successfully removed.`);
   }
 

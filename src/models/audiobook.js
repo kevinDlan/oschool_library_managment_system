@@ -6,7 +6,8 @@ export default class AudioBook extends Book {
     this.duration = duration; // Durée en heures
   }
 
-  getFormat() {
+  getFormat() 
+  {
     return `AudioBook (${this.duration} hours)`;
   }
 }
